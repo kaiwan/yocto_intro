@@ -63,18 +63,19 @@ do_configure () {
 
 do_compile () {
 	# Specify compilation commands here
-	${CC} ${CFLAGS} ${LDFLAGS} ${UNPACKDIR}/helloworld_loops.c -o ${UNPACKDIR}/helloworld_loops
+	:
 }
 
 do_install () {
 	# Specify install commands here; examples below:
 	# (1) create a dir /etc/init.d with:
 	#  install -d -m 0755 ${D}/etc/init.d
-	# (2) Tip: to generate a soft link, first cd to the dir
-      #     and then create it;
+	# (2) Tip: to generate a soft link, first cd to the dir and then create it;
 	#  cd /etc/rc5.d
 	#  ln -s ../init.d/myprg_install.sh S99myprg
-	install -d -m 0755 ${D}/${bindir}
-	install -m 0755 ${WORKDIR}/helloworld_loops ${D}/${bindir}
-		# $bindir = /usr/bin/
+	install -d -m 0755 ${D}${sbindir}
+	install -m 0755 ${S}/0setup.sh ${D}${sbindir}
+	# create slink : /0setup -> /usr/sbin/0setup.sh
+	cd ${D}
+	ln -s ${sbindir}/0setup.sh .
 }
