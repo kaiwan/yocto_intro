@@ -1,0 +1,11 @@
+Slide 12: The Layer Model
+
+Source: https://archive.fosdem.org/2018/schedule/event/rt_linux_with_yocto/attachments/slides/2684/export/events/attachments/rt_linux_with_yocto/slides/2684/Yocto_RT.pdf 
+
+- Layers are repositories containing related sets of instructions which tell the build system what to do. 
+- Users can collaborate, share, and reuse layers. Layers can contain changes to previous instructions or settings at any time.
+- This powerful override capability is what allows you to customize previous collaborative or community supplied layers to suit your product requirements.
+- Use different layers to logically separate information in your build. 
+Examples: a BSP layer, a GUI layer, a distro configuration, middleware, or an application. 
+- Putting your entire build into one layer limits and complicates future customization and reuse. Isolating information into layers, on the other hand, helps keep simplify future customizations and reuse. 
+- Use BSP layers from silicon vendors when possible.
